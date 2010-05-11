@@ -1,0 +1,31 @@
+Plugin Name:    AutoAssignDefaultTVs
+By:             ChuckTrukk www.prowebscape.com
+Released on:    September 17, 2008
+Version:        1.0
+Description:    Automatically assign TVs from a specified category (or categories) to a new (or updated) template
+
+Installation:
+    Create a new plugin named AutoAssignDefaultTVs
+    copy-paste this text into the Plugin code
+    copy-paste the following into Plugin configuration
+        &category=Categories;text;Default  &sortBy=Sort By;text;id ASC &doLog=Log Events to modx?;list;yes,no;yes &updateMode=Assign TVs on template update?;list;yes,no;yes
+    System Events: [x] onTempFormSave
+
+    Input:
+        category    - Comma seperated list of categories your TVs are in
+                    default:  'Default'
+                    examples: 'Default'
+                    examples: 'Default,Store'
+                    
+        sortBy      - Can be any column site_tmplvars such as rank ASC, rank DESC, id ASC, id DESC, etc.
+                    default:  'id ASC'
+                    examples: 'id DESC'
+                    examples: 'rank ASC'
+                    
+        logResults  - Do you want to log the results to Reports -> System Events
+                    default:  'no'
+                    
+        updateMode  - Do you want this plugin to run when an already created template is saved/updated?
+                    default:  'no'
+    Output:
+        if logResults is yes, the results will be listed in the Manager at Reports -> System Events with the title 'PLUGIN: Automatically assign TVs to template'
